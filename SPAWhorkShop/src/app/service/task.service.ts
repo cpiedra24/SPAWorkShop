@@ -14,24 +14,11 @@ export class TaskService {
   constructor(private http: Http,  private _http: HttpClient) {
     this.url = GLOBAL.url;
   }
-
+//MEtodo para registrar las tareas, se mandan las tareas por parametros
   registrar(task: Task) {
     let headers = new Headers({ 'Content-type': 'application/json' });
     return this._http.post(this.url + 'tasks', task)
       .map(res => res);
-  // }
-  // TaskUpdate(task: Task) {
-  //   let headers = new Headers({ 'Content-type': 'application/json' });
-  //   return this._http.put(this.url + 'updateUSer/' + task._id, task, { headers })
-  //     .map(res => res.json());
-  // }
-  // deleteTask(task: Task) {
-  //   let json = JSON.stringify(task);
-  //   let params = json;
 
-  //   let headers = new Headers({ 'Content-type': 'application/json' });
-  //   return this._http.delete(this.url + 'updateUSer/' + task._id, { headers })
-  //     .map(res => res.json());
-  // }
 
 }}
